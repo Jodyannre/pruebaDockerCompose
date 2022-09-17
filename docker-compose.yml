@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  backend:
+    container_name: backend
+    restart: always
+    build: ./back
+    ports: 
+      - 4000:4000
+    networks:
+      network_proyecto:
+        aliases:
+          - backend
+  frontend:
+    container_name: frontend
+    restart: always
+    build: ./front
+    ports: 
+      - 3000:3000
+    depends_on:
+      - backend
+    networks:
+      network_proyecto:
+        aliases:
+          - frontned
+
+networks:
+  network_proyecto:
+    name: net_proyecto
+    driver: bridge
+    ipam: 
+      driver: default
