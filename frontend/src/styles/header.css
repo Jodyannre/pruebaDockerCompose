@@ -1,0 +1,17 @@
+.navbar.header {
+  border-bottom: #20bbcce1 1px solid;
+  height: 5rem;
+}
+
+.navbar.header .navbar-brand {
+  color: rgb(0, 0, 0);
+}
+
+.navbar.header .nav-link {
+  color: rgb(0, 0, 0);
+}
+
+.img_header {
+  width: 100%;
+  object-fit: scale-down;
+}

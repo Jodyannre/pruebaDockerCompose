@@ -1,29 +1,72 @@
 version: "3"
 
 services:
-  backend:
-    container_name: backend
+  admin:
+    container_name: admin
     restart: always
-    build: ./back
-    ports: 
-      - 4000:4000
+    build: ./backend/admin
+    ports:
+      - "3001:3001"
     networks:
       network_proyecto:
         aliases:
-          - backend
+          - admin
+  cliente:
+    container_name: cliente
+    restart: always
+    build: ./backend/clientes
+    ports:
+      - "3002:3002"
+    networks:
+      network_proyecto:
+        aliases:
+          - cliente
+  medico:
+    container_name: medico
+    restart: always
+    build: ./backend/medicos
+    ports:
+      - "3003:3003"
+    networks:
+      network_proyecto:
+        aliases:
+          - medico
+  secretaria:
+    container_name: secretaria
+    restart: always
+    build: ./backend/secretaria
+    ports:
+      - "3004:3004"
+    networks:
+      network_proyecto:
+        aliases:
+          - secretaria
+  sesion:
+    container_name: sesion
+    restart: always
+    build: ./backend/sesion
+    ports:
+      - "3005:3005"
+    networks:
+      network_proyecto:
+        aliases:
+          - sesion
   frontend:
     container_name: frontend
     restart: always
-    build: ./front
-    ports: 
-      - 3000:3000
+    build: ./frontend
+    ports:
+      - "3000:3000"
     depends_on:
-      - backend
+      - admin
+      - secretaria
+      - sesion
+      - medico
+      - cliente
     networks:
       network_proyecto:
         aliases:
-          - frontned
-
+          - frontend
 networks:
   network_proyecto:
     name: net_proyecto

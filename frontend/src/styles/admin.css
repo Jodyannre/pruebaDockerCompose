@@ -1,0 +1,20 @@
+.nav.nav-pills .nav-link.active {
+  background-color: #ff902f5d;
+  height: 3rem;
+  width: 90%;
+  color: #000000;
+  font-weight: bold;
+}
+
+.nav.nav-pills .nav-link {
+  color: #000000;
+}
+
+.Bar {
+    border-right: #20bbcce1  1px solid ;
+    min-height: 44rem;
+    height: 100%;
+    overflow-y: scroll;
+    overflow: hidden;
+    width: 18rem;
+}
