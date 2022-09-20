@@ -4,7 +4,7 @@ import axios from "axios";
 import sha256 from "crypto-js/sha256";
 
 import { useContext } from "react";
-import { AuthContext } from "../auth/context/AuthContext";
+import { AuthContext } from "../../auth/context/AuthContext";
 const { logout } = useContext(AuthContext);
 
 export const usersSlice = createSlice({

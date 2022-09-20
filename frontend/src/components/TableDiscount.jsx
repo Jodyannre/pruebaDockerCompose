@@ -6,10 +6,10 @@ import Swal from "sweetalert2";
 import Spinner from "react-bootstrap/Spinner";
 import { useDispatch, useSelector } from "react-redux";
 
-import {
+const {
   updateDiscount,
-  deleteDiscount,
-} from "../features/discounts/discountSlice";
+  deleteDiscount
+} = "../features/discounts/discountSlice";
 
 function TableDiscount({ discounts }) {
   const dispatch = useDispatch();

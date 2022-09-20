@@ -4,8 +4,7 @@ services:
   admin:
     container_name: admin
     restart: always
-    #build: ./backend/admin
-    image: admin
+    build: ./backend/admin
     ports:
       - "3001:3001"
     networks:
@@ -15,8 +14,7 @@ services:
   cliente:
     container_name: cliente
     restart: always
-    #build: ./backend/clientes
-    image: cliente
+    build: ./backend/clientes
     ports:
       - "3002:3002"
     networks:
@@ -26,8 +24,7 @@ services:
   medico:
     container_name: medico
     restart: always
-    #build: ./backend/medicos
-    image: medico
+    build: ./backend/medicos
     ports:
       - "3003:3003"
     networks:
@@ -37,8 +34,7 @@ services:
   secretaria:
     container_name: secretaria
     restart: always
-    #build: ./backend/secretaria
-    image: secretaria
+    build: ./backend/secretaria
     ports:
       - "3004:3004"
     networks:
@@ -48,8 +44,7 @@ services:
   sesion:
     container_name: sesion
     restart: always
-    #build: ./backend/sesion
-    image: sesion
+    build: ./backend/sesion
     ports:
       - "3005:3005"
     networks:
@@ -59,10 +54,9 @@ services:
   frontend:
     container_name: frontend
     restart: always
-    #build: ./frontend
-    image: frontend
+    build: ./frontend
     ports:
-      - "5173:5173"
+      - "3000:3000"
     depends_on:
       - admin
       - secretaria

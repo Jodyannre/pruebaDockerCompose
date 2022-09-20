@@ -2,7 +2,8 @@ import Swal from "sweetalert2";
 import axios from "axios";
 
 import { useContext } from "react";
-import { AuthContext } from "../auth/context/AuthContext";
+import { AuthContext } from "../../auth/context/AuthContext";
+
 const { logout } = useContext(AuthContext);
 
 export const createReceta = (receta) => async (dispatch) => {
